@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=elements
+Comment=Simple system for testing game development.
+Version=0.1
+GenericName=Elements Game
+TryExec=elements
+Exec=elements %U
+Icon=elements
+Type=Application
+Categories=Games;
+MimeType=application/x-elements;
+
+_Keywords=Games;
