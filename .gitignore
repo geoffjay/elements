@@ -1,3 +1,6 @@
+# Temp files
+*.swp
+
 # Object files
 *.o
 
@@ -6,12 +9,17 @@
 *.a
 
 # Shared objects (inc. Windows DLLs)
-*.dll
 *.so
 *.so.*
-*.dylib
 
-# Executables
-*.exe
-*.out
-*.app
+# Autotools generated files
+configure
+Makefile
+*.in
+
+# Vala generated files
+src/*.h
+src/*.c
+
+# Meson build directory
+_build/

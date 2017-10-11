@@ -14,6 +14,7 @@ elements_CFLAGS = \
 	$(AM_CFLAGS) \
 	$(GLIB_CFLAGS) \
 	$(GEE_CFLAGS) \
+	$(GL_CFLAGS) \
 	$(GSL_CFLAGS) \
 	$(SDL_CFLAGS) \
 	$(XML_CFLAGS)
@@ -22,6 +23,7 @@ elements_LDADD = \
 	@PACKAGE_LIBS@ \
 	$(GLIB_LIBS) \
 	$(GEE_LIBS) \
+	$(GL_LIBS) \
 	$(GSL_LIBS) \
 	$(SDL_LIBS) \
 	$(XML_LIBS)

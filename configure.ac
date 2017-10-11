@@ -67,9 +67,13 @@ PKG_CHECK_MODULES([GSL], [gsl],
 	[VALA_PACKAGES="$VALA_PACKAGES --pkg gsl"],
 	[AC_MSG_ERROR([gsl is required])])
 
+PKG_CHECK_MODULES([GL], [gl],
+	[VALA_PACKAGES="$VALA_PACKAGES --pkg gl"],
+	[AC_MSG_ERROR([OpenGL is required])])
+
 PKG_CHECK_MODULES([SDL], [sdl],
 	[VALA_PACKAGES="$VALA_PACKAGES --pkg sdl --pkg sdl-gfx"],
-	[AC_MSG_ERROR([OpenGL is required])])
+	[AC_MSG_ERROR([SDL is required])])
 
 PKG_CHECK_MODULES([XML], [libxml-2.0],
 	[VALA_PACKAGES="$VALA_PACKAGES --pkg libxml-2.0"],
