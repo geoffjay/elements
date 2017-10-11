@@ -1,4 +1,3 @@
-elements
-========
+# Elements
 
-Just tooling around with elements of game design.
+Currently just a working space to try out OpenGL and SDL with Vala.
