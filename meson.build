@@ -44,6 +44,9 @@ add_project_arguments([
 add_project_arguments([
   ['--vapidir', join_paths(meson.current_source_dir(), 'vapi')],
   ['--pkg', 'config'],
+  ['--pkg', 'sdl2'],
+  ['--pkg', 'sdl2-gfx'],
+  ['--pkg', 'sdl2-image'],
 ], language: 'vala')
 
 dep_glib = dependency('glib-2.0')
@@ -51,6 +54,7 @@ dep_gobject = dependency('gobject-2.0')
 dep_gio = dependency('gio-2.0')
 dep_gee = dependency('gee-0.8')
 dep_json = dependency('json-glib-1.0')
+dep_sdl = dependency('sdl2')
 dep_posix = meson.get_compiler('vala').find_library('posix')
 
 elem_deps = [
@@ -59,6 +63,7 @@ elem_deps = [
   dep_gio,
   dep_gee,
   dep_json,
+  dep_sdl,
   dep_posix,
 ]
 
