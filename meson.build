@@ -45,8 +45,8 @@ add_project_arguments([
   ['--vapidir', join_paths(meson.current_source_dir(), 'vapi')],
   ['--pkg', 'config'],
   ['--pkg', 'sdl2'],
-  ['--pkg', 'sdl2-gfx'],
-  ['--pkg', 'sdl2-image'],
+  #['--pkg', 'sdl2-gfx'],
+  #['--pkg', 'sdl2-image'],
 ], language: 'vala')
 
 dep_glib = dependency('glib-2.0')
@@ -57,6 +57,14 @@ dep_json = dependency('json-glib-1.0')
 dep_sdl = dependency('sdl2')
 dep_posix = meson.get_compiler('vala').find_library('posix')
 
+# Match up pkgconfig and vapi files
+lib_sdlgfx = meson.get_compiler('c').find_library('SDL2_gfx')
+lib_sdlimg = meson.get_compiler('c').find_library('SDL2_image')
+vapi_sdlgfx = meson.get_compiler('vala').find_library('sdl2-gfx', dirs: join_paths(meson.current_source_dir(), 'vapi'))
+vapi_sdlimg = meson.get_compiler('vala').find_library('sdl2-image', dirs: join_paths(meson.current_source_dir(), 'vapi'))
+dep_sdlgfx = declare_dependency(dependencies: [lib_sdlgfx, vapi_sdlgfx])
+dep_sdlimg = declare_dependency(dependencies: [lib_sdlimg, vapi_sdlimg])
+
 elem_deps = [
   dep_glib,
   dep_gobject,
@@ -64,6 +72,8 @@ elem_deps = [
   dep_gee,
   dep_json,
   dep_sdl,
+  dep_sdlgfx,
+  dep_sdlimg,
   dep_posix,
 ]
 

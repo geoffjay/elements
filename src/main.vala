@@ -38,7 +38,7 @@ public class ApplicationWindow : Object {
 		window = new Video.Window ("Elements",
                                    Video.Window.POS_CENTERED,
                                    Video.Window.POS_CENTERED,
-                                   SCREEN_WIDTH,SCREEN_HEIGHT,
+                                   SCREEN_WIDTH, SCREEN_HEIGHT,
                                    Video.WindowFlags.RESIZABLE);
 
 		renderer = Video.Renderer.create (window, -1,
